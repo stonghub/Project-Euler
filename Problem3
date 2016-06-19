@@ -1,0 +1,37 @@
+/* The slow way. Starts from the smallest factor (that is not 1)
+function problem3(numOrig){
+  largestPrime= 1;
+  num= numOrig;
+  for (var i=2; i < numOrig ; i++){
+    while(num%i === 0 && num > 0){
+      num = num/i;
+      largestPrime = i;
+    }
+  }
+  return largestPrime;
+}
+
+//console.log("Practice Problem3: " + problem3(600851475143));
+*/
+
+
+//The faster way. Starts from the largest factor
+//Test to see if factor is a prime number
+function isPrime(x){
+  for (var i = 2; i < x; i++){
+    if (x%i === 0){
+      return false;
+    }
+  }
+  return true;
+}
+
+function problem3(num){
+  for (var i = 0; i < num; i++){
+    if (num%[num-i]===0 & isPrime(num-i)){
+      return (num-i);
+    }
+  }
+}
+
+console.log("Practice Problem3: " + problem3(600851475143));
