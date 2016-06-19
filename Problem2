@@ -1,0 +1,21 @@
+function problem2(){
+  total = 0;
+  totalSum=0;
+  sequence = [1, 2];
+  i = 1;
+  while(total < 3524578){
+    holderA = sequence[i];
+    holderB = sequence[i-1]; 
+    total = holderB + holderA;
+    sequence.push(total);
+    i ++
+  }
+  for (var j = 0; j < sequence.length; j++){
+    if (sequence[i]%2 ===0){
+      totalSum += sequence[i];
+    }
+  }
+  return totalSum;
+}
+
+console.log("Practice Problem2: " + problem2());
