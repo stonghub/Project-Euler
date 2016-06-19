@@ -1,0 +1,12 @@
+//Problem 1
+function problem1(num){
+  total = 0;
+  for(var i = 0; i < num; i++){
+    if (i%3 === 0 || i%5 === 0){
+      total += i;
+    }
+  }
+  return total;
+}
+
+console.log("Practice Problem 1: " + problem1(1000));
